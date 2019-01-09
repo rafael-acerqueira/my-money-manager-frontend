@@ -30,5 +30,13 @@ export function create(values) {
         .catch(e => {
             e.response.data.errors.forEach(error => toastr.error('Erro', error))
         })
-    }
- }
+  }
+}
+
+
+export function showUpdate(id) {
+  return [
+    showTabs('tabUpdate'),
+    selectTab('tabUpdate')
+  ]
+}

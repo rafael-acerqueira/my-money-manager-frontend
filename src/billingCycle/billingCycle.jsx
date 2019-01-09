@@ -40,7 +40,10 @@ componentWillMount() {
               </TabContent>
               <TabContent id='tabCreate'>
                 <Form onSubmit={this.props.create}/>
-              </TabContent>              
+              </TabContent>   
+              <TabContent id='tabUpdate'>
+                <Form />
+              </TabContent>                          
             </TabsContent>
           </Tabs>
         </Content>
