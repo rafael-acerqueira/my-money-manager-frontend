@@ -20,11 +20,27 @@ export function create(values) {
   return submit(values, 'post')
 }
 
+export function update(values) {
+  return submit(values, 'put')
+}
+
+export function remove(values) {
+  return submit(values, 'delete')
+}
+
 
 export function showUpdate(billingCycle) {
+  return showTab(billingCycle, 'Update')
+}
+
+export function showDelete(billingCycle) {
+  return showTab(billingCycle, 'Delete')
+}
+
+function showTab(billingCycle, method) {
   return [
-    showTabs('tabUpdate'),
-    selectTab('tabUpdate'),
+    showTabs(`tab${method}`),
+    selectTab(`tab${method}`),
     initialize('billingCycleForm', billingCycle)
   ]
 }
@@ -51,8 +67,4 @@ function submit(values, method) {
             e.response.data.errors.forEach(error => toastr.error('Erro', error))
         })
   }
-}
-
-export function update(values) {
-  return submit(values, 'put')
 }
