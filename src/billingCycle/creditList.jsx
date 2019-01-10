@@ -16,7 +16,7 @@ class CreditList extends Component {
   renderRows() {
     const list = this.props.list || []
     return list.map((item, index) => (
-      <tr key={item._id}>
+      <tr key={index}>
         <td>
           <Field name={`credits[${index}].name`} 
                 component={Input}
@@ -36,6 +36,10 @@ class CreditList extends Component {
                   onClick={() => this.add(index + 1)}>
             <i className='fa fa-plus'></i>
           </button>
+          <button type='button' className='btn btn-warning'
+                  onClick={() => this.add(index + 1, item)}>
+            <i className='fa fa-clone'></i>
+          </button>          
         </td>        
       </tr>
     ))    
