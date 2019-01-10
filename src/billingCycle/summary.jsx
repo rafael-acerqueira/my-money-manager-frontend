@@ -12,21 +12,21 @@ export default ({ credit, debt }) => (
           cols='12 4' 
           color='green' 
           icon='bank' 
-          value={`R$ ${credit}`}
+          value={`R$ ${Number(credit).toFixed(2)}`}
           text='Total de Créditos'
         />
         <ValueBox 
           cols='12 4' 
           color='red' 
           icon='credit-card' 
-          value={`R$ ${debt}`}
+          value={`R$ ${Number(debt).toFixed(2)}`}
           text='Total de Débitos'
         />
         <ValueBox 
           cols='12 4' 
           color='blue' 
           icon='money' 
-          value={`R$ ${credit - debt}`}
+          value={`R$ ${Number(credit - debt).toFixed(2)}`}
           text='Valor Consolidado'
         />          
       </Row>
