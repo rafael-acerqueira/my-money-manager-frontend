@@ -37,6 +37,16 @@ class ItemList extends Component {
                  readOnly={this.props.readOnly}
           />
         </td>
+        { this.props.showStatus && 
+          <td>        
+            <Field name={`${this.props.field}[${index}].status`} 
+                    component={Input}
+                    placeholder='Informe o status'
+                    readOnly={this.props.readOnly}
+              /> 
+          </td>
+        }           
+        
         <td>
           <button type='button' className='btn btn-success'
                   onClick={() => this.add(index + 1)}>
@@ -68,6 +78,7 @@ class ItemList extends Component {
               <tr>
                 <th>Nome</th>
                 <th>Valor</th>
+                { this.props.showStatus && <th>Status</th> }
                 <th className='table-actions'>Ações</th>
               </tr>            
             </thead>
