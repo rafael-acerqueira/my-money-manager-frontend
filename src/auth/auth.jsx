@@ -6,7 +6,7 @@ import './auth.css'
 
 import Row from '../common/layout/row'
 import Grid from '../common/layout/grid'
-import Messages from '../common/msg/messages'
+import Messages from '../common/messages/messages'
 import Input from '../common/form/inputAuth'
 import { login, signup } from './authActions'
 
